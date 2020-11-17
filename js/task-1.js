@@ -5,13 +5,8 @@ const titleCategory = document.querySelectorAll("#categories > .item > h2");
 
 const sumElements = document.querySelectorAll(".item > ul");
 
-// console.log(
-//   `Категория: ${titleCategory[0].textContent}\nКоличество элементов: ${sumElements[0].children.length}`
-// );
-
-const numbers = [0, 1, 2];
-const answer = numbers.forEach((li) =>
+const answear = sumElements.forEach((li, index) =>
   console.log(
-    `Категория: ${titleCategory[li].textContent}\nКоличество элементов: ${sumElements[li].children.length}`
+    `Категория: ${titleCategory[index].textContent}\nКоличество элементов: ${sumElements[index].children.length}`
   )
 );
