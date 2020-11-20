@@ -7,6 +7,6 @@ const sumElements = document.querySelectorAll(".item > ul");
 
 const answear = sumElements.forEach((li, index) =>
   console.log(
-    `Категория: ${titleCategory[index].textContent}\nКоличество элементов: ${sumElements[index].children.length}`
+    `Категория: ${titleCategory[index].textContent}\nКоличество элементов: ${li.children.length}`
   )
 );
