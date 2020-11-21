@@ -18,11 +18,13 @@ const images = [
 
 const newImages = document.querySelector("#gallery");
 
-images.map((curV) => {
-  newImages.insertAdjacentHTML(
-    "beforeend",
-    `<li class="imagelist"><img class="image" src=${curV.url} alt= ${curV.alt} ></li>`
-  );
-});
+const imagesMapJoin = images
+  .map((curV) => {
+    const standartString = `<li class="imagelist"><img class="image" src=${curV.url} alt= ${curV.alt} ></li>`;
+    return standartString;
+  })
+  .join("");
+
+newImages.insertAdjacentHTML("beforeend", imagesMapJoin);
 
 console.log(newImages);
