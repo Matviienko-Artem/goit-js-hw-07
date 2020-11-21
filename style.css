@@ -1,5 +1,10 @@
+#categories {
+  list-style: none;
+}
+
 .gallary-box {
-  height: 500px;
+  height: auto;
+  margin-bottom: 20px;
 }
 
 #gallery {
