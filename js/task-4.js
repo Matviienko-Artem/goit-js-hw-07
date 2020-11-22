@@ -11,10 +11,10 @@ const decrementBtnRef = document.querySelector(
 
 incrementBtnRef.addEventListener("click", () => {
   console.log((numberValue += 1));
-  return (counterValue.textContent = numberValue);
+  counterValue.textContent = numberValue;
 });
 
 decrementBtnRef.addEventListener("click", () => {
   console.log((numberValue -= 1));
-  return (counterValue.textContent = numberValue);
+  counterValue.textContent = numberValue;
 });
