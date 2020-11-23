@@ -1,18 +1,43 @@
-{
-  /* <div id="controls">
-  <input type="number" min="0" max="100" step="1" />
-  <button type="button" data-action="render">Создать</button>
-  <button type="button" data-action="destroy">Очистить</button>
-</div>
-
-<div id="boxes"></div> */
-}
-
 const inputNambersRef = document.querySelector("#controls>input");
 const btnCreateRef = document.querySelector('button[data-action="render"]');
 const btnDestroyRef = document.querySelector('button[data-action="destroy"]');
 const boxesForDivRef = document.querySelector("#boxes");
-console.log(inputNambersRef);
 
-const createElement = document.createElement("div");
-boxesForDivRef.append(createElement);
+function createBoxes(amount) {
+  const masiveNewDiv = [];
+  let newElement;
+  for (let i = 1; i <= amount; i += 1) {
+    newElement = document.createElement("div");
+    newElement.style.backgroundColor =
+      "#" +
+      (Math.random().toString(16) + "000000").substring(2, 8).toUpperCase();
+    newElement.style.width = `${i * 10 + 20}px`;
+    newElement.style.height = `${i * 10 + 20}px`;
+    masiveNewDiv.push(newElement);
+  }
+  boxesForDivRef.append(...masiveNewDiv);
+  console.log(boxesForDivRef);
+}
+// -------------Второй вариант через appendChild--------------
+// function createBoxes(amount) {
+//   let newElement;
+//   for (let i = 1; i <= amount; i += 1) {
+//     newElement = document.createElement("div");
+//     newElement.style.backgroundColor = "teal";
+//     newElement.style.width = `${i * 10 + 20}px`;
+//     newElement.style.height = `${i * 10 + 20}px`;
+//     boxesForDivRef.appendChild(newElement);
+//   }
+// }
+// -----------------------------------------------------------
+
+// createBoxes(10);
+
+btnCreateRef.addEventListener("click", () => {
+  createBoxes(inputNambersRef.value);
+});
+
+btnDestroyRef.addEventListener("click", () => {
+  inputNambersRef.value = "";
+  boxesForDivRef.innerHTML = "";
+});
