@@ -23,7 +23,7 @@ function createBoxes(amount) {
 //   let newElement;
 //   for (let i = 1; i <= amount; i += 1) {
 //     newElement = document.createElement("div");
-//     newElement.style.backgroundColor = "teal";
+//     newElement.style.backgroundColor = "#" + (Math.random().toString(16) + "000000").substring(2, 8).toUpperCase();
 //     newElement.style.width = `${i * 10 + 20}px`;
 //     newElement.style.height = `${i * 10 + 20}px`;
 //     boxesForDivRef.appendChild(newElement);
